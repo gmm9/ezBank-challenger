@@ -1,0 +1,25 @@
+@use './variables' as v;
+@use './mixins';
+
+.navbar{
+    display: none;
+    @media (min-width: 1440px) {
+        display: flex;
+        width: 65%;
+        justify-content: space-between;
+        align-items: center;
+        &__items {
+            display: flex;
+            gap: 30px;
+            color: v.$Grayish-Blue;
+
+            .navbar__link:hover {
+                border-bottom: 4px solid v.$Lime-Green;
+                padding-bottom: 25px
+            }
+        }
+        &__button {
+            @include mixins.btn-default;
+        }
+    }
+}

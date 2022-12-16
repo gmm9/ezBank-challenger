@@ -1,0 +1,24 @@
+@use './sass_modules/variables' as v;
+@use './sass_modules/inital';
+@use './sass_modules/header';
+@use './sass_modules/navbar';
+@use './sass_modules/sectionOne';
+@use './sass_modules/mixins';
+@use './sass_modules/art-choose';
+@use './sass_modules/latest-art';
+@use './sass_modules/footer';
+@use './sass_modules/modal-navbar';
+
+.container {
+    width: 375px;
+    margin: auto;
+    // position: relative;
+    @media (min-width: 1440px) {    
+            width: 1440px;  
+    }
+}
+
+
+.show {
+    display: block;
+}

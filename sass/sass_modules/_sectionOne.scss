@@ -1,0 +1,88 @@
+@use './variables' as v;
+@use './mixins';
+
+.section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+    background-color: v.$Very-Light-Gray;
+    @media (min-width: 1440px) {
+        flex-direction: row;
+        height: 800px;
+
+    }   
+}
+.artOne {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 0 15px;
+    align-items: center;
+    &__title {
+        font-size: 42px;
+        font-weight: 300;
+        color: v.$Dark-Blue;
+        @media (min-width: 1440px) {
+            font-size: 52px;
+            text-align: start;
+            // width: 70%;
+            padding-left: 170px;
+            
+        }
+    }
+    &__text {
+        font-size: 16px;
+        color: v.$Grayish-Blue;
+        @media (min-width: 1440px) {
+            font-size: 18px;
+            text-align: start;
+            width: 95%;
+            padding-left:170px;
+        }
+
+    }
+    &__button {
+        @include mixins.btn-default;
+        margin: 20px 0 100px;
+        @media (min-width: 1440px) {
+            margin-left: 170px;
+        }
+ 
+    }
+    @media (min-width: 1440px) {
+        order: 0;
+        margin:auto;
+        padding: 10px 30px;
+        align-items:flex-start;        
+    }
+}
+
+.art-phones {
+    background-image: url('../../images/bg-intro-mobile.svg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 340px;
+    z-index: -4;
+    background-position-y: -40px;
+    &__img {
+        width: 375px;
+        margin-top: -135px;
+        position: absolute;
+        z-index: -1;
+        @media (min-width: 1440px) {
+            margin-top: -125px;
+            right: -135px;
+            width: auto;            
+        }
+    }
+    @media (min-width: 1440px) {
+        background-image: url('../../images/bg-intro-desktop.svg');
+        height: 700px;
+        background-position-y: -260px;
+        background-position-x: -50px;
+    }
+}

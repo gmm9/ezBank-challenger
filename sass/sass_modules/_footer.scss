@@ -1,0 +1,99 @@
+@use './variables' as v;
+@use './mixins';
+
+.footer {
+    margin-top: 130px;
+    color: v.$White;
+    background-color: v.$Dark-Blue;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+
+    &__socials {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+        &--icon{
+            width: 25px;
+            &:hover {
+                cursor: pointer;
+                // color: v.$Lime-Green;
+                filter: blur(0px) brightness(170%) contrast(71%) drop-shadow(1px -2px 1px v.$Lime-Green) grayscale(34%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(200%) sepia(0%);
+            }
+        }
+    }
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        @media (min-width: 1440px) {
+            margin-left: 30px;
+        }
+        &--list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            &--bloco {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+            }
+            @media (min-width: 1440px) {
+                flex-direction: row;
+                gap: 100px;
+                padding-right: 200px;
+                text-align: left;
+            }   
+        }
+        &--item a{
+            font-size: 14px;
+            font-weight: 300;
+            color: v.$White;
+            @media (min-width: 1440px){
+                font-size: 16px;
+            }
+            &:hover {
+                cursor: pointer;
+                color: v.$Lime-Green;
+            }
+        }
+        &--button {
+            @include mixins.btn-default;
+        }
+        &--rights {
+            font-size: 13px;
+            color: v.$Grayish-Blue;
+            @media (min-width: 1440px) {
+                font-size: 16px;
+            }
+        }
+    }
+    @media (min-width: 1440px) {
+        flex-direction: row;
+        gap: 80px;
+        margin-top: 0;
+    }
+    &__bloco1 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        @media (min-width: 1440px) {
+            gap: 50px;
+        }
+    }
+    &__bloco2 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        @media (min-width: 1440px) {
+            gap: 20px;
+            align-items: flex-end;
+        }
+    }
+}
